@@ -52,10 +52,7 @@ def PFD(data):
         The resulting value
     """
     derivative = np.diff(data)
-    size=len(data)
-    signChanges = countSignChanges(derivative)
-    logSize = np.log(size)
-    return logSize / (logSize + np.log(size / (size + 0.4 * signChanges)))
+    return np.absolute(derivative)
 
 def line_length(data):
     """
