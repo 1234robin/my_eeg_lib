@@ -10,8 +10,8 @@ import scipy as sp
 import fastdtw
 
 from eeglib.features import (bandPower, hjorthActivity, hjorthMobility,
-                             hjorthComplexity, sampEn, LZC, DFA, HFD, PFD,
-                             synchronizationLikelihood, line_length)
+                             hjorthComplexity, sampEn, LZC, DFA, HFD, line_length,
+                             synchronizationLikelihood )
 from eeglib.preprocessing import bandPassFilter
 from eeglib.auxFunctions import listType
 
@@ -684,7 +684,7 @@ class EEG:
 
         return bandsSignals
 
-    def PFD(self, i=None):
+    def line_length(self, i=None):
         """
         Returns the Petrosian Fractal Dimension at the given index of the
         window.
@@ -707,12 +707,9 @@ class EEG:
             return object will be a 1D array containing the result of the
             procesing.
         """
-        return self._applyFunctionTo(PFD,i)
+        return self._applyFunctionTo(line_length,i)
         
         
-        def line_length(self, i=None):
-      
-           return self._applyFunctionTo(line_length,i)
         
 
     def HFD(self, i=None, kMax=None):
