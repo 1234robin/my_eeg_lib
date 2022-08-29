@@ -37,23 +37,6 @@ def bandPower(spectrum, bandsLimits, freqRes, normalize=False):
     return {key:sp.integrate.trapz(spectrum[band[0]:band[1]], dx=freqRes)/total
             for key, band in bandsLimits.items()}
 
-def PFD(data):
-    """
-    Returns the Petrosian Fractal Dimension of the signal given in data.
-
-    Parameters
-    ----------
-    data: array_like
-        Signal
-
-    Returns
-    -------
-    float
-        The resulting value
-    """
-    derivative = np.diff(data)
-    return np.absolute(derivative)
-
 def line_length(data):
     """
     Returns the Petrosian Fractal Dimension of the signal given in data.
@@ -70,6 +53,7 @@ def line_length(data):
     """
     derivative = np.diff(data)
     return np.absolute(derivative)
+    
 
 
 def HFD(data,kMax=None):
