@@ -11,7 +11,7 @@ import fastdtw
 
 from eeglib.features import (bandPower, hjorthActivity, hjorthMobility,
                              hjorthComplexity, sampEn, LZC, DFA, HFD, PFD,
-                             synchronizationLikelihood)
+                             synchronizationLikelihood, line_length)
 from eeglib.preprocessing import bandPassFilter
 from eeglib.auxFunctions import listType
 
@@ -708,6 +708,12 @@ class EEG:
             procesing.
         """
         return self._applyFunctionTo(PFD,i)
+        
+        
+        def line_length(self, i=None):
+      
+           return self._applyFunctionTo(line_length,i)
+        
 
     def HFD(self, i=None, kMax=None):
         """
@@ -855,13 +861,6 @@ class EEG:
 
     def engagementLevel(self):
         """
-        Returns the engagament level, which is calculated with this formula:
-        beta/(alpha+theta), where alpha, beta and theta are the average of the
-        average band values between al the channels.
-
-        Returns
-        -------
-        float
             The engagement level.
         """
         bandValues = self.bandPower()
