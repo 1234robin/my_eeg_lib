@@ -57,6 +57,24 @@ def PFD(data):
     logSize = np.log(size)
     return logSize / (logSize + np.log(size / (size + 0.4 * signChanges)))
 
+def line_length(data):
+    """
+    Returns the Petrosian Fractal Dimension of the signal given in data.
+
+    Parameters
+    ----------
+    data: array_like
+        Signal
+
+    Returns
+    -------
+    float
+        The resulting value
+    """
+    derivative = np.diff(data)
+    return np.absolute(derivative)
+
+
 def HFD(data,kMax=None):
     """
     Returns the Higuchi Fractal Dimension of the signal given data.
