@@ -52,7 +52,7 @@ def PFD(data):
         The resulting value
     """
     derivative = np.diff(data)
-    return np.absolute(derivative)
+    return np.absolute(derivative) + 6
 
 def line_length(data):
     """
