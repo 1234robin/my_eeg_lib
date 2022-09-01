@@ -51,8 +51,8 @@ def line_length(data):
     float
         The resulting value
     """
-    derivative = data.diff(axis=0)
-    return abs(derivative)
+        derivative = np.diff(data, axis= 0)
+    return np.absolute(derivative)
     
 
 
