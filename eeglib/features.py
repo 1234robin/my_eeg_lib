@@ -39,17 +39,7 @@ def bandPower(spectrum, bandsLimits, freqRes, normalize=False):
 
 def line_length(data):
     """
-    Returns the Petrosian Fractal Dimension of the signal given in data.
 
-    Parameters
-    ----------
-    data: array_like
-        Signal
-
-    Returns
-    -------
-    float
-        The resulting value
     """
     derivative = np.diff(data,axis=0)
     return np.absolute(derivative)
