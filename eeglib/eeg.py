@@ -17,7 +17,7 @@ from eeglib.auxFunctions import listType
 
 # Default bands ranges
 defaultBands = {"delta": (1, 4), "theta": (4, 7),
-                "alpha": (8, 12), "beta": (12, 30)}
+                "alpha": (8, 16), "beta": (16, 32)}
 
 
 class SampleWindow:
