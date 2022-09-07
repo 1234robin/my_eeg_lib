@@ -16,8 +16,8 @@ from eeglib.preprocessing import bandPassFilter
 from eeglib.auxFunctions import listType
 
 # Default bands ranges
-defaultBands = {"gamma": (32, 96), "theta": (4, 8),
-                "alpha": (8, 16), "beta": (16, 32)}
+defaultBands = { "theta": (4, 8),
+                "alpha": (8, 16), "beta": (16, 32), "gamma": (32, 96)}
 
 
 class SampleWindow:
