@@ -122,7 +122,7 @@ class Wrapper():
             Parameter format [((begin, end),label), ]; begin is the begin of
             the segment, end is the end of the segment and label the label
             realed to that segment. Begin and end can be either an int, a str
-            or a datetime.timedelta, being the same that the parameter of
+            or a datetime.timegamma, being the same that the parameter of
             :py:meth:`eeglib.helpers.Helper.moveEEGWindow`. The label of the
             unlabelled segments will be 0. If None, no segmentation will be
             added. Default: None.
