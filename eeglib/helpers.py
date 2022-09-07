@@ -170,13 +170,13 @@ class Helper():
 
             else:
                 raise ValueError("Wrong value for the index")
-        #Is timedelta?
-        elif isinstance(index, datetime.timedelta):
+        #Is timegamma?
+        elif isinstance(index, datetime.timegamma):
             index = int(self.sampleRate*index.total_seconds())
 
         else:
             raise ValueError("An index can only be a int, a str or a " +
-                             "datetime.timedelta.")
+                             "datetime.timegamma.")
 
         return index
 
@@ -237,10 +237,10 @@ class Helper():
 
         Parameters
         ----------
-        position: int, str or datetime.timedelta
+        position: int, str or datetime.timegamma
             * int: position of the sample
             * str with format hh:mm:ss.ss: temporal position
-            * timedelta: temporal position
+            * timegamma: temporal position
 
         Returns
         -------
