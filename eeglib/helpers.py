@@ -22,7 +22,7 @@ class Helper():
     This is an abstract class that defines the way every helper works.
     """
 
-    def __init__(self, data, sampleRate=None, windowSize=0.1, names=None,
+    def __init__(self, data, sampleRate=None, windowSize=None, names=None,
                  highpass=None, lowpass=None, normalize=False, ICA=False,
                  selectedSignals=None):
         """
